@@ -1,0 +1,10 @@
+# Versiones validadas (Python 3.11.5)
+numpy==2.4.6
+pandas==3.0.5
+scikit-learn==1.9.1
+matplotlib==3.10.3
+
+# Solo para extraer activaciones y generar SQL (scripts 00 a 02, requieren GPU)
+transformers==5.16.1
+accelerate==1.14.0
+# torch==2.11.0+cu128  (instalar desde el índice de PyTorch que corresponda a su versión de CUDA)

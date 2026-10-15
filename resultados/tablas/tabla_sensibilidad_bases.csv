@@ -1,0 +1,17 @@
+metrica,detalle,valor,ic_lo,ic_hi
+diff_AUROC_bootstrap_por_bases,gb_menos_lr,0.024617605441400014,-0.010019129467574665,0.061897010409165606
+diff_AUROC_bootstrap_por_bases,gb_menos_longitud,0.1209410718873224,0.005394015911745331,0.21747913615963993
+diff_AUROC_bootstrap_por_bases,lr_menos_longitud,0.09632346644592238,-0.007951332140694925,0.1900461316265316
+diff_AUROC_bootstrap_por_bases,gb_menos_confianza,0.04281677275711471,-0.03585827384933347,0.11182927925746027
+diff_AUROC_bootstrap_por_bases,gb_menos_dificultad,0.04510237286476815,-0.030979224300289196,0.12416147495534885
+diff_AUROC_bootstrap_por_bases,lr_menos_dificultad,0.020484767423368133,-0.039793738489871146,0.0856107002053572
+acierto_por_base_n_ge_30,min,0.33695652173913043,,
+acierto_por_base_n_ge_30,max,0.9473684210526315,,
+acierto_por_base_todas,min,0.25,,
+acierto_por_base_todas,max,0.9473684210526315,,
+AUROC_gb_por_pliegue,min,0.5294871794871795,,
+AUROC_gb_por_pliegue,max,0.7635897435897435,,
+AUROC_gb_correcta_vs,sintactico,0.7451321847212095,,
+AUROC_gb_correcta_vs,silencioso,0.6782500391256717,,
+AUROC_confianza_cruda,etiquetas_v1,0.6910878164556962,,
+AUROC_confianza_cruda,etiquetas_v2,0.6683861338900873,,

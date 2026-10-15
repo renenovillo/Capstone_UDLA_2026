@@ -1,0 +1,50 @@
+qid,dificultad,gold_sql,pred_sql
+es_0011,medium,"SELECT country ,  count(*) FROM singer GROUP BY country","SELECT COUNT(Singer_ID), Country FROM singer GROUP BY Country"
+es_0073,medium,"SELECT avg(weight) ,  pettype FROM pets GROUP BY pettype","SELECT PetType, AVG(weight) AS AverageWeight FROM Pets GROUP BY PetType"
+es_0074,medium,"SELECT avg(weight) ,  pettype FROM pets GROUP BY pettype","SELECT PetType, AVG(weight) AS AverageWeight FROM Pets GROUP BY PetType"
+es_0079,medium,"SELECT count(*) ,  T1.stuid FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid GROUP BY T1.stuid","SELECT StuID, COUNT(PetID) AS NumberOfPets FROM Has_Pet GROUP BY StuID"
+es_0080,medium,"select count(*) ,  t1.stuid from student as t1 join has_pet as t2 on t1.stuid  =  t2.stuid group by t1.stuid","SELECT StuID, COUNT(PetID) AS Number_of_Pets FROM Has_Pet GROUP BY StuID"
+es_0263,medium,"SELECT count(*) ,  city FROM employee GROUP BY city","SELECT City, COUNT(*) AS Number_of_Employees FROM employee GROUP BY City"
+es_0264,medium,"SELECT count(*) ,  city FROM employee GROUP BY city","SELECT City, COUNT(*) AS Employee_Count FROM employee GROUP BY City"
+es_0267,medium,"SELECT count(*) ,  LOCATION FROM shop GROUP BY LOCATION","SELECT Location, COUNT(*) AS Number_of_shops FROM shop GROUP BY Location"
+es_0268,medium,"SELECT count(*) ,  LOCATION FROM shop GROUP BY LOCATION","SELECT Location, COUNT(*) AS Number_of_shops FROM shop GROUP BY Location"
+es_0287,medium,"SELECT count(*) ,  t2.name FROM hiring AS t1 JOIN shop AS t2 ON t1.shop_id  =  t2.shop_id GROUP BY t2.name","SELECT T2.Name, COUNT(T1.Employee_ID) AS Number_of_Employees
+FROM hiring AS T1
+JOIN shop AS T2 ON T1.Shop_ID = T2.Shop_ID
+GROUP BY T2.Name"
+es_0288,medium,"SELECT count(*) ,  t2.name FROM hiring AS t1 JOIN shop AS t2 ON t1.shop_id  =  t2.shop_id GROUP BY t2.name","SELECT T2.Name, COUNT(T1.Employee_ID) AS Number_of_Employees
+FROM hiring AS T1
+JOIN shop AS T2 ON T1.Shop_ID = T2.Shop_ID
+GROUP BY T2.Shop_ID"
+es_0417,medium,"SELECT Num_of_Staff ,  Open_Year FROM museum WHERE name  =  'Plaza Museum'","SELECT Open_Year, Num_of_Staff FROM museum WHERE Name = 'Plaza Museum'"
+es_0435,medium,"SELECT avg(loser_age) ,  avg(winner_age) FROM matches","SELECT AVG(winner_age) AS average_winner_age, AVG(loser_age) AS average_loser_age FROM matches"
+es_0481,medium,"SELECT count(*) ,  YEAR FROM matches GROUP BY YEAR","SELECT YEAR, COUNT(*) AS num_matches FROM matches GROUP BY YEAR"
+es_0482,medium,"SELECT count(*) ,  YEAR FROM matches GROUP BY YEAR","SELECT YEAR, COUNT(*) AS total_matches FROM matches GROUP BY YEAR"
+es_0529,extra hard,"SELECT T1.semester_name ,  T1.semester_id FROM Semesters AS T1 JOIN Student_Enrolment AS T2 ON T1.semester_id  =  T2.semester_id GROUP BY T1.semester_id ORDER BY count(*) DESC LIMIT 1","SELECT semester_id, semester_name FROM Semesters WHERE semester_id = (SELECT semester_id FROM Student_Enrolment GROUP BY semester_id ORDER BY COUNT(student_id) DESC LIMIT 1)"
+es_0552,medium,"SELECT T2.transcript_date ,  T1.transcript_id FROM Transcript_Contents AS T1 JOIN Transcripts AS T2 ON T1.transcript_id  =  T2.transcript_id GROUP BY T1.transcript_id HAVING count(*)  >=  2","SELECT T1.transcript_id, T1.transcript_date FROM Transcripts AS T1 INNER JOIN Transcript_Contents AS T2 ON T1.transcript_id = T2.transcript_id GROUP BY T1.transcript_id HAVING COUNT(T2.student_course_id) >= 2"
+es_0617,medium,"SELECT max(SHARE) , min(SHARE) FROM TV_series;","SELECT MIN(Share) AS Min_Share, MAX(Share) AS Max_Share FROM TV_series"
+es_0627,medium,"SELECT count(*) ,  Directed_by FROM cartoon GROUP BY Directed_by","SELECT Directed_by, COUNT(*) AS Number_of_Drawings FROM Cartoon GROUP BY Directed_by"
+es_0628,medium,"SELECT count(*) ,  Directed_by FROM cartoon GROUP BY Directed_by","SELECT Directed_by, COUNT(*) AS Number_of_Drawings FROM Cartoon GROUP BY Directed_by"
+es_0716,medium,"SELECT Population ,  Region FROM country WHERE Name  =  ""Angola""","SELECT Region, Population FROM country WHERE Name = 'Angola'"
+es_0788,medium,"SELECT Name ,  SurfaceArea ,  IndepYear FROM country ORDER BY Population LIMIT 1","SELECT Name, IndepYear, SurfaceArea FROM country ORDER BY Population ASC LIMIT 1"
+es_0789,medium,"SELECT Name ,  SurfaceArea ,  IndepYear FROM country ORDER BY Population LIMIT 1","SELECT Name, IndepYear, SurfaceArea FROM country ORDER BY Population ASC LIMIT 1"
+es_0790,medium,"SELECT Name ,  population ,  HeadOfState FROM country ORDER BY SurfaceArea DESC LIMIT 1","SELECT T1.Population, T1.Name, T1.HeadOfState FROM country AS T1 INNER JOIN city AS T2 ON T1.Code = T2.CountryCode ORDER BY T1.SurfaceArea DESC LIMIT 1"
+es_0792,medium,"SELECT COUNT(T2.Language) ,  T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode GROUP BY T1.Name HAVING COUNT(*)  >  2","SELECT T1.Name, COUNT(T2.Language) AS NumberOfLanguages
+FROM country AS T1
+JOIN countrylanguage AS T2 ON T1.Code = T2.CountryCode
+GROUP BY T1.Code
+HAVING COUNT(T2.Language) >= 3"
+es_0793,medium,"SELECT COUNT(T2.Language) ,  T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode GROUP BY T1.Name HAVING COUNT(*)  >  2","SELECT T1.Name, COUNT(DISTINCT T2.Language) AS NumberOfLanguages
+FROM country AS T1
+JOIN countrylanguage AS T2 ON T1.Code = T2.CountryCode
+GROUP BY T1.Code
+HAVING COUNT(DISTINCT T2.Language) > 2"
+es_0794,extra hard,"SELECT count(*) ,  District FROM city WHERE Population  >  (SELECT avg(Population) FROM city) GROUP BY District","SELECT District, COUNT(*) FROM city WHERE Population > (SELECT AVG(Population) FROM city) GROUP BY District"
+es_0795,extra hard,"SELECT count(*) ,  District FROM city WHERE Population  >  (SELECT avg(Population) FROM city) GROUP BY District","SELECT District, COUNT(*) AS CityCount
+FROM city
+WHERE Population > (SELECT AVG(Population) FROM city)
+GROUP BY District"
+es_0798,medium,"SELECT sum(Population) ,  avg(LifeExpectancy) ,  Continent FROM country GROUP BY Continent HAVING avg(LifeExpectancy)  <  72","SELECT T1.Continent, AVG(T1.LifeExpectancy) AS AverageLifeExpectancy, SUM(T1.Population) AS TotalPopulation
+FROM country AS T1
+GROUP BY T1.Continent
+HAVING AVG(T1.LifeExpectancy) < 72"

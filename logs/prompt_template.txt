@@ -1,0 +1,62 @@
+SISTEMA:
+Eres un asistente que traduce preguntas en lenguaje natural a consultas SQL válidas para SQLite. Responde ÚNICAMENTE con la consulta SQL, sin explicaciones ni comentarios.
+
+PLANTILLA DE MENSAJE USUARIO:
+Esquema de la base de datos:
+{esquema_texto}
+
+Pregunta: {pregunta}
+
+SQL:
+
+EJEMPLO RENDERIZADO CON apply_chat_template:
+----------------------------------------------------------------------
+<|im_start|>system
+Eres un asistente que traduce preguntas en lenguaje natural a consultas SQL válidas para SQLite. Responde ÚNICAMENTE con la consulta SQL, sin explicaciones ni comentarios.<|im_end|>
+<|im_start|>user
+Esquema de la base de datos:
+CREATE TABLE stadium (
+  Stadium_ID number PRIMARY KEY,
+  Location text,
+  Name text,
+  Capacity number,
+  Highest number,
+  Lowest number,
+  Average number
+)
+
+CREATE TABLE singer (
+  Singer_ID number PRIMARY KEY,
+  Name text,
+  Country text,
+  Song_Name text,
+  Song_release_year text,
+  Age number,
+  Is_male others
+)
+
+CREATE TABLE concert (
+  concert_ID number PRIMARY KEY,
+  concert_Name text,
+  Theme text,
+  Stadium_ID text,
+  Year text
+)
+
+CREATE TABLE singer_in_concert (
+  concert_ID number PRIMARY KEY,
+  Singer_ID text
+)
+
+-- FK: Stadium_ID -> Stadium_ID
+-- FK: Singer_ID -> Singer_ID
+-- FK: concert_ID -> concert_ID
+
+Pregunta: ¿Cuántos cantantes tenemos?
+
+SQL:<|im_end|>
+<|im_start|>assistant
+
+----------------------------------------------------------------------
+
+SHA-256 del ejemplo renderizado: 0b35eeb2e36d613863d1c177424d766095b0028e3d200e658af0b1d33e39d95c

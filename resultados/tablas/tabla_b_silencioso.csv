@@ -1,0 +1,2 @@
+modelo,n,n_correcta,n_silencioso,auroc,ic_lo,ic_hi,cumple_criterio
+gb,893,661,232,0.6782500391256717,0.6381239323468608,0.7182011461062175,True

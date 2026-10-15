@@ -1,0 +1,16 @@
+======================================================================
+Verificacion de entorno - 2026-09-27T16:15:33.107637
+======================================================================
+
+Python: 3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)]
+Ejecutable: <python del entorno virtual>
+
+torch: 2.11.0+cu128
+CUDA disponible: True
+Dispositivo: NVIDIA GeForce RTX 4060 Laptop GPU
+VRAM libre: 7.45 GB / total: 8.59 GB
+transformers: 5.16.1
+accelerate: 1.14.0
+sklearn: 1.9.1
+numpy: 2.4.6
+pandas: 3.0.5

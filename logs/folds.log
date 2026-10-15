@@ -1,0 +1,38 @@
+======================================================================
+Fase 3.1 - Pliegues externos
+======================================================================
+Filas totales en meta_es: 1034
+Filas validas (gold_status != 'error'): 1032
+
+Verificacion: db_id compartido entre train y test del mismo pliegue
+  Pliegue 0: OK, sin solapamiento de db_id (n_test=3 bases)
+  Pliegue 1: OK, sin solapamiento de db_id (n_test=3 bases)
+  Pliegue 2: OK, sin solapamiento de db_id (n_test=5 bases)
+  Pliegue 3: OK, sin solapamiento de db_id (n_test=3 bases)
+  Pliegue 4: OK, sin solapamiento de db_id (n_test=6 bases)
+
+Distribucion de tamanos por pliegue:
+fold_externo
+0    172
+1    242
+2    238
+3    152
+4    228
+Name: count, dtype: int64
+
+Tasa de acierto (y=1) por pliegue:
+fold_externo
+0    0.697674
+1    0.652893
+2    0.659664
+3    0.500000
+4    0.657895
+Name: y, dtype: float64
+
+Guardado: data\folds.csv
+[Fase R2] Comparacion con data/folds_v1.csv (solo informativo)
+  preguntas comparadas: 1032
+  preguntas que cambiaron de pliegue: 762 (73.8 %)
+  bases (db_id) que cambiaron de pliegue: 16 de 20
+  Nota: los numeros de pliegue son etiquetas arbitrarias; la estratificacion por y cambio con v2 (29 etiquetas) y la asignacion de bases a pliegues se rehizo con la misma semilla.
+  Verificacion de no solapamiento de db_id: OK en los 5 pliegues (ver arriba).

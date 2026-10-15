@@ -1,0 +1,22 @@
+======================================================================
+Fase 4.4 - Analisis (d): ruido asimetrico en los reportes
+======================================================================
+Modelo operativo: GB
+AUROC de referencia (longitud): 0.5824
+
+Nivel de ruido rho = 0.1
+  AUROC medio (20 replicas): 0.6908  percentil [2.5,97.5] = [0.6710, 0.7070]
+  Supera a longitud en >= 0.10: si (diferencia = +0.1085)
+  Supera a longitud en absoluto: si
+
+Nivel de ruido rho = 0.2
+  AUROC medio (20 replicas): 0.6801  percentil [2.5,97.5] = [0.6611, 0.7086]
+  Supera a longitud en >= 0.10: no (diferencia = +0.0977)
+  Supera a longitud en absoluto: si
+
+Nivel de ruido rho = 0.3
+  AUROC medio (20 replicas): 0.6755  percentil [2.5,97.5] = [0.6638, 0.6876]
+  Supera a longitud en >= 0.10: no (diferencia = +0.0931)
+  Supera a longitud en absoluto: si
+
+Guardado: resultados\tablas\tabla_d_ruido.csv

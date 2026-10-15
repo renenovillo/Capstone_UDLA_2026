@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.venv/
+venv*/
+.ipynb_checkpoints/
+
+# Insumos y artefactos pesados (ver README)
+externo/*
+!externo/.gitkeep
+data/acts_es.npy
+data/extraccion/
+data/corpus_es.jsonl
+data/meta_es_v2.csv
+
+# Prevencion de fugas
+.env
+.env.*
+*.npy
+*.safetensors
+*.bin
+*.pt
+*.sqlite

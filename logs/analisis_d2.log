@@ -1,0 +1,10 @@
+Analisis (d), variante de ruido dependiente de la instancia (solo errores silenciosos reetiquetados como correctos)
+Script: 10b_ruido_silencioso.py, ejecutado el 2026-10-01 con Python 3.11.5. La salida por consola no se guardo; estos valores son los de la tabla
+resultados/tablas/tabla_d2_ruido_silencioso.csv. Los criterios estan en logs/analisis_d_criterios.log.
+
+ rho  auroc_medio   p2_5  p97_5
+ 0.1       0.6969 0.6778 0.7149
+ 0.2       0.6883 0.6620 0.7086
+ 0.3       0.6845 0.6650 0.7025
+ 0.4       0.6792 0.6473 0.7021
+ 0.5       0.6818 0.6615 0.6987

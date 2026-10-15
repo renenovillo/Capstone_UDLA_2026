@@ -1,0 +1,87 @@
+======================================================================
+Fase 3.2 - Modelado (COMPLETA) - 2026-10-01 16:54:49
+======================================================================
+n valido = 1032 | acts_validos.shape = (1032, 37, 2048)
+
+=== Pliegue externo 0 === (train=860, test=172)
+  Grilla LR (capa x C) evaluada en 31.9s (36 capas x 6 C = 216 combinaciones)
+  LR elegido: capa=28, C=0.0001, AUROC OOF interno=0.7651
+  MLP elegido: hidden=(32,), alpha=0.01, AUROC OOF interno=0.7392 (11.1s)
+  GB elegido: max_depth=3, AUROC OOF interno=0.7422 (19.6s)
+
+=== Pliegue externo 1 === (train=790, test=242)
+  Grilla LR (capa x C) evaluada en 26.1s (36 capas x 6 C = 216 combinaciones)
+  LR elegido: capa=34, C=1, AUROC OOF interno=0.7180
+  MLP elegido: hidden=(128,), alpha=0.001, AUROC OOF interno=0.6581 (27.1s)
+  GB elegido: max_depth=2, AUROC OOF interno=0.6948 (15.6s)
+
+=== Pliegue externo 2 === (train=794, test=238)
+  Grilla LR (capa x C) evaluada en 24.4s (36 capas x 6 C = 216 combinaciones)
+  LR elegido: capa=28, C=0.0001, AUROC OOF interno=0.7077
+  MLP elegido: hidden=(32,), alpha=0.001, AUROC OOF interno=0.6894 (13.0s)
+  GB elegido: max_depth=3, AUROC OOF interno=0.6681 (14.0s)
+
+=== Pliegue externo 3 === (train=880, test=152)
+  Grilla LR (capa x C) evaluada en 26.4s (36 capas x 6 C = 216 combinaciones)
+  LR elegido: capa=28, C=0.0001, AUROC OOF interno=0.7239
+  MLP elegido: hidden=(32,), alpha=0.01, AUROC OOF interno=0.6583 (8.6s)
+  GB elegido: max_depth=3, AUROC OOF interno=0.6993 (22.7s)
+
+=== Pliegue externo 4 === (train=804, test=228)
+  Grilla LR (capa x C) evaluada en 23.2s (36 capas x 6 C = 216 combinaciones)
+  LR elegido: capa=28, C=0.01, AUROC OOF interno=0.7339
+  MLP elegido: hidden=(32,), alpha=0.1, AUROC OOF interno=0.7274 (15.3s)
+  GB elegido: max_depth=3, AUROC OOF interno=0.6849 (18.3s)
+
+Tiempo total modelado: 6.2 min
+
+======================================================================
+Perfil por capas (7.9) - descriptivo, C fijo = mas frecuente
+======================================================================
+C mas frecuente entre los 5 pliegues: 0.0001
+Guardado: resultados\tablas\perfil_capas.csv
+    capa  auroc_oof
+0      1   0.589562
+1      2   0.611860
+2      3   0.624061
+3      4   0.631123
+4      5   0.616876
+5      6   0.620488
+6      7   0.607240
+7      8   0.623751
+8      9   0.628359
+9     10   0.631099
+10    11   0.642182
+11    12   0.638365
+12    13   0.632371
+13    14   0.634602
+14    15   0.647789
+15    16   0.669618
+16    17   0.659827
+17    18   0.667371
+18    19   0.674193
+19    20   0.681708
+20    21   0.711578
+21    22   0.715819
+22    23   0.716810
+23    24   0.726372
+24    25   0.730731
+25    26   0.727041
+26    27   0.725479
+27    28   0.731062
+28    29   0.727273
+29    30   0.721308
+30    31   0.715933
+31    32   0.712895
+32    33   0.712288
+33    34   0.714392
+34    35   0.714608
+35    36   0.718225
+
+Guardado: resultados\oof_predicciones.csv (1032 filas)
+Guardado: logs\seleccion_por_pliegue.csv
+NaN totales en oof_predicciones: 0 (esperado 0)
+
+[Nota] C = 1e-4 (3 de 5 pliegues) es el valor mas frecuente y esta en el BORDE INFERIOR de la rejilla {1e-4,...,10}:
+la regularizacion elegida es la mas fuerte disponible; no se amplia la rejilla.
+Capas elegidas por pliegue: 28, 34, 28, 28, 28.

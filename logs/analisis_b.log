@@ -1,0 +1,10 @@
+======================================================================
+Fase 4.2 - Analisis (b): error silencioso
+======================================================================
+Modelo operativo: GB
+n subconjunto = 893 (correcta=661, silencioso=232)
+
+AUROC GB en subconjunto: 0.6783  IC95% [0.6381, 0.7182]
+Criterio (limite inferior > 0.5): CUMPLE
+
+Guardado: resultados\tablas\tabla_b_silencioso.csv

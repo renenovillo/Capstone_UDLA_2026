@@ -1,0 +1,24 @@
+Lotes a etiquetar: 21
+  [0000:0050] 50 preguntas etiquetadas -> meta_etq_0000_0050.jsonl
+  [0050:0100] 50 preguntas etiquetadas -> meta_etq_0050_0100.jsonl
+  [0100:0150] 50 preguntas etiquetadas -> meta_etq_0100_0150.jsonl
+  [0150:0200] 50 preguntas etiquetadas -> meta_etq_0150_0200.jsonl
+  [0200:0250] 50 preguntas etiquetadas -> meta_etq_0200_0250.jsonl
+  [0250:0300] 50 preguntas etiquetadas -> meta_etq_0250_0300.jsonl
+  [0300:0350] 50 preguntas etiquetadas -> meta_etq_0300_0350.jsonl
+  [0350:0400] 50 preguntas etiquetadas -> meta_etq_0350_0400.jsonl
+  [0400:0450] 50 preguntas etiquetadas -> meta_etq_0400_0450.jsonl
+  [0450:0500] 50 preguntas etiquetadas -> meta_etq_0450_0500.jsonl
+  [0500:0550] 50 preguntas etiquetadas -> meta_etq_0500_0550.jsonl
+  [0550:0600] 50 preguntas etiquetadas -> meta_etq_0550_0600.jsonl
+  [0600:0650] 50 preguntas etiquetadas -> meta_etq_0600_0650.jsonl
+  [0650:0700] 50 preguntas etiquetadas -> meta_etq_0650_0700.jsonl
+  [0700:0750] 50 preguntas etiquetadas -> meta_etq_0700_0750.jsonl
+  [0750:0800] 50 preguntas etiquetadas -> meta_etq_0750_0800.jsonl
+  [0800:0850] 50 preguntas etiquetadas -> meta_etq_0800_0850.jsonl
+  [0850:0900] 50 preguntas etiquetadas -> meta_etq_0850_0900.jsonl
+  [0900:0950] 50 preguntas etiquetadas -> meta_etq_0900_0950.jsonl
+  [0950:1000] 50 preguntas etiquetadas -> meta_etq_0950_1000.jsonl
+  [1000:1034] 34 preguntas etiquetadas -> meta_etq_1000_1034.jsonl
+
+Total etiquetado: 1034 preguntas en 14.9s

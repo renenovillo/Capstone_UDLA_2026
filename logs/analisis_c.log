@@ -1,0 +1,27 @@
+======================================================================
+Fase 4.3 - Analisis (c): curva de aprendizaje
+======================================================================
+Modelo operativo: GB
+
+Tamano n = 100
+  AUROC medio (20 replicas): 0.6406  percentil [2.5,97.5] = [0.6144, 0.6765]
+
+Tamano n = 200
+  AUROC medio (20 replicas): 0.6642  percentil [2.5,97.5] = [0.6238, 0.7018]
+
+Tamano n = 400
+  AUROC medio (20 replicas): 0.6849  percentil [2.5,97.5] = [0.6596, 0.7120]
+
+Tamano n = todo
+  AUROC medio (20 replicas): 0.7063  percentil [2.5,97.5] = [0.7063, 0.7063]
+
+----------------------------------------------------------------------
+Criterio: menor tamano cuyo IC se solapa con el de 'todo'
+----------------------------------------------------------------------
+  n=100: IC=[0.6144,0.6765] vs todo=[0.7063,0.7063] -> no solapa
+  n=200: IC=[0.6238,0.7018] vs todo=[0.7063,0.7063] -> no solapa
+  n=400: IC=[0.6596,0.7120] vs todo=[0.7063,0.7063] -> SOLAPA
+
+Con ~400 respuestas reportadas, el detector alcanza ~97% del AUROC del modelo completo (n=todo).
+
+Guardado: resultados\tablas\tabla_c_aprendizaje.csv

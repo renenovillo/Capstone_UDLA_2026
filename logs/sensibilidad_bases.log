@@ -1,0 +1,17 @@
+Bootstrap por bases completas (20 bases, 2000 remuestreos, semilla 42):
+  gb_menos_lr: +0.0246  IC95% por bases [-0.0100, +0.0619]
+  gb_menos_longitud: +0.1209  IC95% por bases [+0.0054, +0.2175]
+  lr_menos_longitud: +0.0963  IC95% por bases [-0.0080, +0.1900]
+  gb_menos_confianza: +0.0428  IC95% por bases [-0.0359, +0.1118]
+  gb_menos_dificultad: +0.0451  IC95% por bases [-0.0310, +0.1242]
+  lr_menos_dificultad: +0.0205  IC95% por bases [-0.0398, +0.0856]
+
+Acierto por base: 20 bases; con n >= 30 (16 bases): min 33.7 % (car_1), max 94.7 % (employee_hire_evaluation); todas las bases: min 25.0 % (real_estate_properties, n = 4), max 94.7 %
+
+AUROC de GB por pliegue externo: 0=0.529, 1=0.714, 2=0.757, 3=0.736, 4=0.764
+
+AUROC de GB (p_cal) para correcta frente a cada tipo de error:
+  correcta vs sintactico: n = 800  AUROC = 0.7451
+  correcta vs silencioso: n = 893  AUROC = 0.6783
+
+Confianza cruda (conf_logprob_mean), AUROC con etiquetas v1 = 0.6911 y con v2 = 0.6684 (29 etiquetas distintas; no se re-entrena nada)

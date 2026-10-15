@@ -1,0 +1,90 @@
+======================================================================
+Fase 4.1 - Analisis (a): comparacion de modelos
+======================================================================
+n = 1032 (OOF agrupadas de los 5 pliegues externos)
+
+----------------------------------------------------------------------
+AUROC (con p_cal para LR/MLP/GB; p_raw para referencias) + IC 95%
+----------------------------------------------------------------------
+  LR        : AUROC = 0.6787  IC95% [0.6446, 0.7106]
+  MLP       : AUROC = 0.6913  IC95% [0.6570, 0.7228]
+  GB        : AUROC = 0.7033  IC95% [0.6691, 0.7373]
+  LONGITUD  : AUROC = 0.5824  IC95% [0.5474, 0.6185]
+  CONFIANZA : AUROC = 0.6605  IC95% [0.6270, 0.6938]
+
+----------------------------------------------------------------------
+Brier (con p_cal) + IC 95%; referencia: Brier de la prevalencia
+----------------------------------------------------------------------
+  LR        : Brier = 0.2122  IC95% [0.2015, 0.2242]
+  MLP       : Brier = 0.2084  IC95% [0.1991, 0.2184]
+  GB        : Brier = 0.2049  IC95% [0.1944, 0.2157]
+  PREVALENCIA: Brier = 0.2303 (referencia, sin IC)
+
+----------------------------------------------------------------------
+Diferencias pareadas (bootstrap pareado, mismos indices)
+----------------------------------------------------------------------
+  LR - longitud: +0.0963  IC95% [+0.0524, +0.1391]  (criterio >= 0.10: NO CUMPLE; limite inferior > 0: si)
+  MLP - LR: +0.0126  IC95% [-0.0085, +0.0354]  (IC incluye 0 -> senal esencialmente lineal)
+  GB - LR: +0.0246  IC95% [+0.0006, +0.0493]  (GB supera a LR (IC > 0))
+
+MODELO OPERATIVO: GB (supera a LR segun regla 7.7/8.1)
+  GB - confianza: +0.0428  IC95% [-0.0036, +0.0886] (comparacion, sin umbral)
+
+----------------------------------------------------------------------
+Sensibilidad: AUROC del modelo operativo excluyendo gold_empty==True
+----------------------------------------------------------------------
+  AUROC GB (n=1032, con gold_empty): 0.7033
+  AUROC GB (n=983, sin gold_empty): 0.7165
+
+----------------------------------------------------------------------
+Desagregacion (descriptiva): AUROC de GB por dificultad
+----------------------------------------------------------------------
+  easy         (n_pos=206, n_neg=42): AUROC = 0.7147
+  extra hard   (n_pos=70, n_neg=96): AUROC = 0.6394
+  hard         (n_pos=95, n_neg=79): AUROC = 0.6751
+  medium       (n_pos=290, n_neg=154): AUROC = 0.6227
+
+----------------------------------------------------------------------
+R4.1 Referencia de dificultad (descriptiva; easy=3, medium=2, hard=1, extra hard=0)
+----------------------------------------------------------------------
+  AUROC dificultad (ordinal): 0.6582  IC95% [0.6249, 0.6894]
+  LR - dificultad: +0.0205  IC95% [-0.0190, +0.0601] (bootstrap pareado)
+  AUROC intra-nivel de dificultad, lr (p_cal_lr): 0.6166 (descriptivo, sin IC)
+  AUROC intra-nivel de dificultad, confianza (p_conf): 0.6546 (descriptivo, sin IC)
+
+----------------------------------------------------------------------
+Comparaciones del modelo operativo (GB - longitud: criterio a; el resto, complementos)
+----------------------------------------------------------------------
+  gb_menos_longitud: +0.1209  IC95% [+0.0804, +0.1618] (bootstrap pareado)
+  gb_menos_dificultad: +0.0451  IC95% [+0.0102, +0.0837] (bootstrap pareado)
+  lr_menos_confianza: +0.0182  IC95% [-0.0317, +0.0636] (bootstrap pareado)
+  AUROC intra-nivel de dificultad, gb (p_cal_gb): 0.6420 (descriptivo, sin IC)
+
+----------------------------------------------------------------------
+R4.2 Calibracion de p_cal_lr: ECE (10 intervalos de igual anchura) y fiabilidad
+----------------------------------------------------------------------
+ intervalo    lo    hi   n  p_media  frecuencia_observada
+         0 0.000 0.100   0      NaN                   NaN
+         1 0.100 0.200  14    0.178                 0.357
+         2 0.200 0.300  42    0.261                 0.429
+         3 0.300 0.400  81    0.353                 0.407
+         4 0.400 0.500 132    0.452                 0.530
+         5 0.500 0.600 170    0.548                 0.571
+         6 0.600 0.700 208    0.650                 0.620
+         7 0.700 0.800 175    0.748                 0.726
+         8 0.800 0.900 147    0.850                 0.844
+         9 0.900 1.000  63    0.939                 0.921
+  ECE (p_cal_lr) = 0.0391
+  ECE (p_cal_mlp) = 0.0361
+  ECE (p_cal_gb) = 0.0248
+
+----------------------------------------------------------------------
+R4.3 Coherencia: AUROC agrupado vs. media por pliegue (p_raw_lr)
+----------------------------------------------------------------------
+  AUROC agrupado con p_raw_lr: 0.6635
+  AUROC agrupado con p_cal_lr: 0.6787  (el de la tabla principal)
+  Media de AUROC por pliegue (p_raw_lr): 0.6802  (por pliegue: 0=0.572, 1=0.671, 2=0.743, 3=0.743, 4=0.673)
+  Nota: dentro de cada pliegue Platt es monotono, asi que el AUROC por pliegue es el mismo con p_raw y p_cal; solo el AUROC agrupado difiere, porque Platt reordena las puntuaciones entre pliegues.
+
+Guardado: resultados\tablas\tabla_a_modelos.csv
+Guardado: logs\modelo_operativo.txt -> 'gb'
